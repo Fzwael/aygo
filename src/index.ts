@@ -1,3 +1,3 @@
-export function sayHello(): string {
-    return "Hello !";
-}
+import * as Aygo from './aygo';
+
+export { Aygo };

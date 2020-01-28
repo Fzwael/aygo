@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
+
 /**
  *
  * This method will call console.debug using the values passed to it.
  * @param {...unknown[]} values : the values to be logged
  */
 export function debug(...values: unknown[]): void {
-    console.debug(values);
+  console.debug(values);
 }
 
 /**
@@ -13,7 +15,7 @@ export function debug(...values: unknown[]): void {
  * @param {...unknown[]} values : the values to be logged
  */
 export function log(...values: unknown[]): void {
-    console.log(values);
+  console.log(values);
 }
 
 /**
@@ -22,7 +24,7 @@ export function log(...values: unknown[]): void {
  * @param {...unknown[]} values : the values to be logged
  */
 export function info(...values: unknown[]): void {
-    console.info(values);
+  console.info(values);
 }
 
 /**
@@ -31,7 +33,7 @@ export function info(...values: unknown[]): void {
  * @param {...unknown[]} values : the values to be logged
  */
 export function warn(...values: unknown[]): void {
-    console.warn(values);
+  console.warn(values);
 }
 
 /**
@@ -40,5 +42,5 @@ export function warn(...values: unknown[]): void {
  * @param {...unknown[]} values : the values to be logged
  */
 export function error(...values: unknown[]): void {
-    console.error(values);
+  console.error(values);
 }

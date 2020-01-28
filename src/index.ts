@@ -1,3 +1,3 @@
-import * as Aygo from './Aygo';
+import * as Aygo from './aygo';
 
 export { Aygo };

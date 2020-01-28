@@ -17,9 +17,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Create firebase environment file
-      run: |
-        cp src/environments/firebase.environment.template.ts src/environments/firebase.environment.ts
     - name: npm install, lint, test, and build
       run: |
         npm ci

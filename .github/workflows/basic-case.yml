@@ -1,0 +1,29 @@
+name: Lint, Test and Build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Create firebase environment file
+      run: |
+        cp src/environments/firebase.environment.template.ts src/environments/firebase.environment.ts
+    - name: npm install, lint, test, and build
+      run: |
+        npm ci
+        npm run test
+        npm run build
+      env:
+        CI: true

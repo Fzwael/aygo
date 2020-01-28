@@ -1,14 +1,14 @@
 {
   "name": "aygo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple logger for typescript and javascript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json",
-    "patch": "npm version patch -m \":bookmark: : Release v %s :bookmark\"",
-    "prepublish": "npm run build && npm run patch"
+    "validate": "npm run build && npm run test",
+    "patch": "npm validate && npm version patch -m \":bookmark: : Release v %s :bookmark\""
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-name: Lint, Test and Build
+name: Validate the project
 
 on: [push]
 
@@ -20,7 +20,6 @@ jobs:
     - name: npm install, lint, test, and build
       run: |
         npm ci
-        npm run test
-        npm run build
+        npm run validate
       env:
         CI: true

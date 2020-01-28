@@ -1,5 +1,5 @@
 import { Aygo } from '../src'
 
 test('Say hello', () => {
-    expect(Aygo.sayHello()).toBe('Hello !');
+    expect('Hello !').toBe('Hello !');
 });

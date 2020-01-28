@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": " eslint ./src/*",
     "test": "jest --config jestconfig.json",
     "validate": "npm run build && npm run test",
     "patch": "npm run validate && npm version patch -m \":bookmark: : Release v %s :bookmark:\""
@@ -30,6 +31,11 @@
   "homepage": "https://github.com/aygo-js/aygo#readme",
   "devDependencies": {
     "@types/jest": "^25.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
     "jest": "^25.1.0",
     "ts-jest": "^25.0.0",
     "typescript": "3.7.5"

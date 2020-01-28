@@ -8,7 +8,7 @@
     "build": "tsc",
     "test": "jest --config jestconfig.json",
     "validate": "npm run build && npm run test",
-    "patch": "npm validate && npm version patch -m \":bookmark: : Release v %s :bookmark\""
+    "patch": "npm run validate && npm version patch -m \":bookmark: : Release v %s :bookmark\""
   },
   "repository": {
     "type": "git",

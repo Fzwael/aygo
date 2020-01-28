@@ -6,7 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json",
+    "patch": "npm version patch -m \":bookmark: : Release v %s :bookmark\"",
+    "prepublish": "npm run build && npm run patch"
   },
   "repository": {
     "type": "git",

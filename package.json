@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": " eslint ./src/*",
+    "lint": "eslint ./src/* ./test/*",
     "test": "jest --config jestconfig.json",
     "validate": "npm run lint && npm run build && npm run test",
     "patch": "npm run validate && npm version patch -m \":bookmark: : Release v %s :bookmark:\""

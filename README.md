@@ -21,20 +21,11 @@ To use aygo just install it via :
 
 Then you can import it like the following :
 
-```
-import { Aygo } from 'aygo';
-
-Aygo.log("LOG : This", "is", { "key": "a test" }, 134);
+``` typescript
+import { Aygo, LEVELS } from 'aygo';
+const logger = new Aygo('[EXAMPLE]', LEVELS.DEBUG);
+logger.log("LOG : This", "is", { "key": "a test" }, 134);
 ``` 
-
-OR
-
-```
-const aygo = require("aygo");
-const Aygo = aygo.Aygo;
-
-Aygo.log("LOG : This", "is", { "key": "a test" }, 134);
- ```
 
 ## Methods
 

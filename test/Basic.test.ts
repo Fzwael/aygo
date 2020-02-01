@@ -1,14 +1,23 @@
 /* eslint-disable no-console */
 import { Aygo } from '../src';
 
+/**
+ * Define the logger to be used in the tests
+ */
+let logger: Aygo;
+
+beforeAll(() => {
+  logger = new Aygo('[JEST]');
+});
+
 describe('Basic test suite', () => {
   /*
    * Testing if the console.debug is called or not
    */
   it('should call console.debug', () => {
     console.debug = jest.fn();
-    Aygo.debug('debug');
-    expect(console.debug).toHaveBeenCalledWith('debug');
+    logger.debug('debug');
+    expect(console.debug).toHaveBeenCalledWith('[JEST]', 'debug');
   });
 
   /*
@@ -16,8 +25,8 @@ describe('Basic test suite', () => {
    */
   it('should call console.log', () => {
     console.log = jest.fn();
-    Aygo.log('log');
-    expect(console.log).toHaveBeenCalledWith('log');
+    logger.log('log');
+    expect(console.log).toHaveBeenCalledWith('[JEST]', 'log');
   });
 
   /*
@@ -25,8 +34,8 @@ describe('Basic test suite', () => {
    */
   it('should call console.ibfo', () => {
     console.info = jest.fn();
-    Aygo.info('info');
-    expect(console.info).toHaveBeenCalledWith('info');
+    logger.info('info');
+    expect(console.info).toHaveBeenCalledWith('[JEST]', 'info');
   });
 
   /*
@@ -34,8 +43,8 @@ describe('Basic test suite', () => {
    */
   it('should call console.warn', () => {
     console.warn = jest.fn();
-    Aygo.warn('warn');
-    expect(console.warn).toHaveBeenCalledWith('warn');
+    logger.warn('warn');
+    expect(console.warn).toHaveBeenCalledWith('[JEST]', 'warn');
   });
 
   /*
@@ -43,7 +52,7 @@ describe('Basic test suite', () => {
    */
   it('should call console.error', () => {
     console.error = jest.fn();
-    Aygo.error('error');
-    expect(console.error).toHaveBeenCalledWith('error');
+    logger.error('error');
+    expect(console.error).toHaveBeenCalledWith('[JEST]', 'error');
   });
 });

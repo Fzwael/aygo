@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export { Aygo } from './aygo';
+export { LEVELS } from './log.levels';

@@ -7,35 +7,35 @@ import { Aygo, LEVELS } from '../src';
 let logger: Aygo;
 
 beforeAll(() => {
-  logger = new Aygo('[JEST]', LEVELS.DEBUG);
+  logger = new Aygo('[JEST]', LEVELS.WARN);
 });
 
-describe('Basic test suite', () => {
+describe('Level test suite', () => {
   /*
    * Testing if the console.debug is called or not
    */
-  it('should call console.debug', () => {
+  it('should not call console.debug', () => {
     console.debug = jest.fn();
     logger.debug('debug');
-    expect(console.debug).toHaveBeenCalledWith('[JEST]', 'debug');
+    expect(console.debug).toHaveBeenCalledTimes(0);
   });
 
   /*
    * Testing if the console.log is called or not
    */
-  it('should call console.log', () => {
+  it('should not call console.log', () => {
     console.log = jest.fn();
     logger.log('log');
-    expect(console.log).toHaveBeenCalledWith('[JEST]', 'log');
+    expect(console.log).toHaveBeenCalledTimes(0);
   });
 
   /*
    * Testing if the console.info is called or not
    */
-  it('should call console.info', () => {
+  it('should not call console.info', () => {
     console.info = jest.fn();
     logger.info('info');
-    expect(console.info).toHaveBeenCalledWith('[JEST]', 'info');
+    expect(console.info).toHaveBeenCalledTimes(0);
   });
 
   /*

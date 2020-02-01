@@ -1,4 +1,6 @@
 /* eslint-disable no-console, import/prefer-default-export */
+import { LEVELS } from './log.levels';
+import { shouldLog } from './helpers';
 
 export class Aygo {
   /**
@@ -7,16 +9,27 @@ export class Aygo {
    * the module name will be added before each log
    * @example : new Aygo("[MyModule]");
    * @private
-   * @type {String}
+   * @type {string}
    * @memberof Aygo
    */
-  private module: String;
+  private module: string;
+
+  /**
+   *
+   * Represents the log minimum logging level
+   * To be defined via LEVELS enum
+   * @private
+   * @type {number}
+   * @memberof Aygo
+   */
+  private level: number;
 
   /**
    * Constructor for initializing the logger
    */
-  constructor(module: String) {
+  constructor(module: string, level: number) {
     this.module = module;
+    this.level = level;
   }
 
   /**
@@ -25,7 +38,9 @@ export class Aygo {
    * @param {...unknown[]} values : the values to be logged
    */
   debug(...values: unknown[]): void {
-    console.debug(this.module, ...values);
+    if (shouldLog(this.level, LEVELS.DEBUG)) {
+      console.debug(this.module, ...values);
+    }
   }
 
   /**
@@ -34,7 +49,9 @@ export class Aygo {
   * @param {...unknown[]} values : the values to be logged
   */
   log(...values: unknown[]): void {
-    console.log(this.module, ...values);
+    if (shouldLog(this.level, LEVELS.LOG)) {
+      console.log(this.module, ...values);
+    }
   }
 
   /**
@@ -43,7 +60,9 @@ export class Aygo {
   * @param {...unknown[]} values : the values to be logged
   */
   info(...values: unknown[]): void {
-    console.info(this.module, ...values);
+    if (shouldLog(this.level, LEVELS.INFO)) {
+      console.info(this.module, ...values);
+    }
   }
 
   /**
@@ -52,7 +71,9 @@ export class Aygo {
   * @param {...unknown[]} values : the values to be logged
   */
   warn(...values: unknown[]): void {
-    console.warn(this.module, ...values);
+    if (shouldLog(this.level, LEVELS.WARN)) {
+      console.warn(this.module, ...values);
+    }
   }
 
   /**
@@ -61,6 +82,8 @@ export class Aygo {
   * @param {...unknown[]} values : the values to be logged
   */
   error(...values: unknown[]): void {
-    console.error(this.module, ...values);
+    if (shouldLog(this.level, LEVELS.ERROR)) {
+      console.error(this.module, ...values);
+    }
   }
 }

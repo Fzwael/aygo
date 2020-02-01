@@ -2,7 +2,6 @@
 import { Aygo } from '../src';
 
 describe('Basic test suite', () => {
-
   /*
    * Testing if the console.debug is called or not
    */

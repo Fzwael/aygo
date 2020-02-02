@@ -44,10 +44,10 @@ export class Aygo {
   }
 
   /**
-  *
-  * This method will call console.log using the values passed to it.
-  * @param {...unknown[]} values : the values to be logged
-  */
+    *
+    * This method will call console.log using the values passed to it.
+    * @param {...unknown[]} values : the values to be logged
+    */
   log(...values: unknown[]): void {
     if (shouldLog(this.level, LEVELS.LOG)) {
       console.log(this.module, ...values);
@@ -55,10 +55,10 @@ export class Aygo {
   }
 
   /**
-  *
-  * This method will call console.info using the values passed to it.
-  * @param {...unknown[]} values : the values to be logged
-  */
+    *
+    * This method will call console.info using the values passed to it.
+    * @param {...unknown[]} values : the values to be logged
+    */
   info(...values: unknown[]): void {
     if (shouldLog(this.level, LEVELS.INFO)) {
       console.info(this.module, ...values);
@@ -77,13 +77,25 @@ export class Aygo {
   }
 
   /**
-  *
-  * This method will call console.error using the values passed to it.
-  * @param {...unknown[]} values : the values to be logged
-  */
+    *
+    * This method will call console.error using the values passed to it.
+    * @param {...unknown[]} values : the values to be logged
+    */
   error(...values: unknown[]): void {
     if (shouldLog(this.level, LEVELS.ERROR)) {
       console.error(this.module, ...values);
+    }
+  }
+
+  /**
+  *
+  * This method will call console.table using the value passed to it.
+  * @param {unknown[]} value : the values (table) to be logged
+  */
+  table(value: unknown[]): void {
+    if (shouldLog(this.level, LEVELS.LOG)) {
+      console.log(this.module);
+      console.table(value);
     }
   }
 }

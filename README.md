@@ -24,7 +24,12 @@ Then you can import it like the following :
 ``` typescript
 import { Aygo, LEVELS } from 'aygo';
 const logger = new Aygo('[EXAMPLE]', LEVELS.DEBUG);
+
+logger.debug("LOG : This", "is", { "key": "a test" }, 134);
 logger.log("LOG : This", "is", { "key": "a test" }, 134);
+logger.info("LOG : This", "is", { "key": "a test" }, 134);
+logger.warn("LOG : This", "is", { "key": "a test" }, 134);
+logger.error("LOG : This", "is", { "key": "a test" }, 134);
 ``` 
 
 ## Methods
@@ -36,3 +41,8 @@ For now Aygo supports the basic logging methods (check the examples for more) :
 * info
 * warn
 * error
+
+## Examples
+
+[Typescript](https://github.com/aygo-js/aygo/blob/master/examples/typescript/src/example.ts)
+

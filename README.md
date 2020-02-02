@@ -25,11 +25,12 @@ Then you can import it like the following :
 import { Aygo, LEVELS } from 'aygo';
 const logger = new Aygo('[EXAMPLE]', LEVELS.DEBUG);
 
-logger.debug("LOG : This", "is", { "key": "a test" }, 134);
-logger.log("LOG : This", "is", { "key": "a test" }, 134);
-logger.info("LOG : This", "is", { "key": "a test" }, 134);
-logger.warn("LOG : This", "is", { "key": "a test" }, 134);
-logger.error("LOG : This", "is", { "key": "a test" }, 134);
+logger.debug('DEBUG : This', 'is', { key: 'a test' }, 134);
+logger.log('LOG : This', 'is', { key: 'a test' }, 134);
+logger.info('INFO : This', 'is', { key: 'a test' }, 134);
+logger.warn('WARN : This', 'is', { key: 'a test' }, 134);
+logger.error('ERROR : This', 'is', { key: 'a test' }, 134);
+logger.table(['LOG : This', 'is', { key: 'a test' }, 134]);
 ``` 
 
 ## Methods

@@ -21,6 +21,13 @@ export function typescript() {
   logger2.info('INFO : This', 'is', { key: 'a test' }, 134);
   logger2.warn('WARN : This', 'is', { key: 'a test' }, 134);
   logger2.error('ERROR : This', 'is', { key: 'a test' }, 134);
+
+  /**
+   * The table method is in the same level as LEVELS.LOG
+   */
+  const logger3 = new Aygo('[TS-EXAMPLE-3]', LEVELS.DEBUG);
+  logger3.table(['LOG : This', 'is', { key: 'a test' }, 134]);
+  logger3.table(['much', 'simpler', 'array']);
 }
 
 window.onload = typescript;

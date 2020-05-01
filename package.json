@@ -10,7 +10,9 @@
     "lint-fix": "eslint ./src/* ./test/* --fix",
     "test": "jest --config jestconfig.json",
     "validate": "npm run lint && npm run build && npm run test",
-    "patch": "npm run validate && npm version patch -m \":bookmark: : Release v %s :bookmark:\""
+    "patch": "npm run validate && npm version patch -m \":bookmark: : Release v %s :bookmark:\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,8 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "npm-check-updates": "^4.1.2"
-  }
+    "npm-check-updates": "^4.1.2",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }

@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "npm-check-updates": "^6.0.1",
-    "snyk": "^1.335.0"
+    "snyk": "^1.336.0"
   },
   "snyk": true
 }
